@@ -1,0 +1,288 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Rho-class article
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[9pt,letterpaper,twocolumn,twoside,apabib]{rho-class/rho}
+\usepackage[spanish,es-nodecimaldot,es-noindentfirst,es-noshorthands]{babel}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{pdflscape}
+% \usepackage{hyperref}
+
+% Use shortauthor abbreviations directly in citations while keeping full authors
+% in the bibliography and preserving biblatex-apa's standard citation macros.
+
+\makeatletter
+\renewbibmacro*{cite:plabelyear+extradate}{%
+  \iffieldundef{labelyear}{}
+    {\clearfield{labelmonth}%
+     \clearfield{labelday}%
+     \clearfield{labelendmonth}%
+     \clearfield{labelendday}%
+     \clearfield{labelyeardivision}%
+     \clearfield{labelendyeardivision}%
+     \iffieldsequal{labelyear}{labelendyear}
+       {\clearfield{labelendyear}}
+       {}%
+     \iffieldundef{origyear}
+       {}
+       {\printorigdate%
+        \setunit*{\addslash}}%
+     \iffieldundef{related}
+       {}
+       {\iffieldequalstr{relatedtype}{reprintfrom}
+         {\entrydata*{\thefield{related}}{\printlabeldateextra}%
+          \setunit*{\addslash}}
+         {}}%
+     \printlabeldateextra}}
+
+\renewbibmacro*{cite}{%
+  \printtext[bibhyperref]{%
+    \iffieldequals{namehash}{\cbx@lasthash}
+      {\setunit{\compcitedelim}%
+       \usebibmacro{cite:plabelyear+extradate}}
+      {\ifnameundef{labelname}
+        {\usebibmacro{cite:noname}%
+         \setunit{\printdelim{nameyeardelim}}%
+         \usebibmacro{cite:plabelyear+extradate}%
+         \savefield{namehash}{\cbx@lasthash}}
+        {\ifnameundef{shortauthor}
+          {\printnames{labelname}}
+          {\cbx@apa@ifnamesaved
+            {\printnames{shortauthor}}
+            {\printnames[labelname]{author}%
+             \addspace\printnames[sabrackets]{shortauthor}}}%
+         \setunit{\printdelim{nameyeardelim}}%
+         \usebibmacro{cite:plabelyear+extradate}%
+         \savefield{namehash}{\cbx@lasthash}}}}%
+  \setunit{\multicitedelim}}
+
+\AtEveryCitekey{%
+  \ifnameundef{shortauthor}
+    {}
+    {\xifinlist{\thefield{namehash}}{\cbx@apa@names}
+      {}
+      {\listxadd{\cbx@apa@names}{\thefield{namehash}}}}}
+\makeatother
+
+%----------------------------------------------------------
+% Title
+%----------------------------------------------------------
+
+\doctype{Artículo de análisis}
+\title{Tecnología para la equidad}
+\subtitle{Soberanía digital y transformación social en el gobierno de Gustavo Petro (2022--2026)}
+
+%----------------------------------------------------------
+% Authors, Affiliations and dates
+%----------------------------------------------------------
+
+% \author[{\textasteriskcentered},a,1]{Equipo de análisis}
+% \affil[a]{Documento de trabajo}
+
+
+\author[{\textasteriskcentered},a,1]{Alejandro Giraldo Quintero}
+\author[a,2]{Silvia Rosero}
+% \author[{\textdagger},c,3]{Author Three}
+
+%----------------------------------------------------------
+
+\affil[a]{Ministerio de Relaciones Exteriores de Colombia}
+% \affil[b]{Affiliation of author two}
+% \affil[c]{Affiliation of author three}
+
+
+
+
+\dates{Corte de información: 24 de febrero de 2026}
+
+%----------------------------------------------------------
+% Document information
+%----------------------------------------------------------
+
+\corres{\textsuperscript{\textasteriskcentered} alejandro.giraldo@cancilleria.gov.co}
+\docinfo{Estudio de caso sobre política digital, soberanía tecnológica e interdependencia compleja en Colombia durante el periodo 2022--2026.}
+
+\journalname{Observatorio de Política Exterior}
+\journal{Gobierno de Colombia 2022--2026}
+\theday{\today}
+\vol{1}
+\no{2}
+
+%----------------------------------------------------------
+% Abstract and Keywords
+%----------------------------------------------------------
+
+\begin{abstract}
+En el contexto de la transformación digital global, la soberanía estatal comienza a redefinirse según la capacidad de los Estados para gobernar infraestructuras digitales, flujos de datos y sistemas tecnológicos. Este artículo analiza la política digital implementada en Colombia durante el periodo 2022--2026, con el objetivo de evaluar en qué medida ha contribuido a la construcción de soberanía digital y al reposicionamiento del país en el sistema internacional. A partir de un enfoque cualitativo basado en evidencia documental y bajo el criterio de logro verificable, el estudio examina infraestructura, gobernanza de datos, inteligencia artificial, regulación y formación de talento. El análisis se apoya en la concepción clásica de soberanía de Hobbes, la teoría de la interdependencia compleja de Keohane y Nye, y el enfoque de dependencia y desarrollo de Cardoso y Faletto. Se argumenta que Colombia no ha buscado autonomía tecnológica absoluta, sino un modelo de interdependencia regulada, en el que el Estado fortalece su capacidad de decisión mediante capacidades internas, regulación estratégica e inserción activa en redes globales de tecnología e inversión.
+\end{abstract}
+
+\keywords{soberanía digital, interdependencia compleja, dependencia, política digital, Colombia, gobernanza tecnológica, inteligencia artificial}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firststyle}
+
+\section{Introducción}
+
+\rhostart{E}n el siglo XXI, la soberanía y la gobernanza de los Estados ya no se definen únicamente por el control del territorio o la capacidad militar. También dependen de la habilidad para gobernar infraestructuras invisibles: redes digitales, flujos de datos y sistemas algorítmicos que estructuran la vida social contemporánea. Desde una lectura hobbesiana, el Estado existe para garantizar seguridad y orden; en el entorno actual, esa función se extiende al control y la regulación del espacio digital \parencite{hobbes_leviatan_2017}.
+
+Esta transformación es técnica y política. La revolución digital ha alterado las bases materiales del poder, generando jerarquías internacionales basadas en acceso a datos, capacidad de cómputo, infraestructura y talento. Mientras las grandes potencias tecnológicas concentran ventajas estructurales, los países del Sur Global enfrentan el riesgo de reproducir dinámicas históricas de dependencia en una nueva dimensión digital.
+
+Frente a ese escenario, este trabajo pregunta en qué medida la política digital con enfoque social implementada en Colombia durante el periodo 2022--2026 ha contribuido a la construcción de soberanía digital y al reposicionamiento del país en el sistema internacional. La hipótesis central es que Colombia ha avanzado hacia un modelo de interdependencia regulada: fortalece su margen de decisión y autonomía estratégica sin desconectarse de las redes globales de inversión, tecnología y conocimiento, ni pretende ser una autarquía digital, sino que comprende y gestiona las interconexiones que la vinculan.
+
+
+\section{Metodología y Marco Teórico}
+
+El estudio emplea dos enfoques principales de las relaciones internacionales para analizar los avances del Gobierno 2022--2026: la teoría de la interdependencia compleja de Robert Keohane y Joseph Nye, y el enfoque de dependencia y desarrollo en América Latina de Fernando Henrique Cardoso y Enzo Faletto \parencite{keohane_nye_power_2011,cardoso_faletto_dependencia_1977}.
+
+En términos clásicos, la búsqueda de poder y control del Estado sobre su territorio se ha guiado por una lógica cercana a Thomas Hobbes, que concibe la soberanía como principio organizador del Estado y como capacidad de ejercer protección dentro de límites territoriales definidos \parencite{hobbes_leviatan_2017}. En el caso colombiano, esta concepción se articula con los artículos 1 y 2 de la Constitución Política, que definen a Colombia como Estado social de derecho y establecen entre los fines esenciales del Estado servir a la comunidad, promover la prosperidad general, defender la independencia nacional, mantener la integridad territorial y proteger a todas las personas residentes en el país \parencite{constitucion_colombia_1991}. Esta definición resalta el papel del Estado en la organización del poder, pero también su responsabilidad de garantizar condiciones de bienestar, inclusión y participación.
+
+En el contexto digital, dicha función se proyecta sobre redes, datos y plataformas, de modo que la soberanía digital puede leerse como una extensión funcional del mandato estatal de seguridad \parencite{denardis_internet_governance_2014}.
+
+Esta expansión también modifica la idea de territorio. El espacio digital se convierte en un ámbito donde ocurren interacciones sociales, económicas y políticas, y sobre el cual el Estado busca ejercer protección, regulación y gobernanza. En ese sentido, el ``territorio digital'' no sustituye el territorio físico, pero sí amplía los campos donde se disputa el poder estatal \parencite{floridi_fourth_revolution_2018}.
+
+El enfoque de poder e interdependencia de Robert Keohane y Joseph Nye permite comprender que el sistema internacional contemporáneo no se sustenta exclusivamente en la coerción, sino en redes densas entre Estados, empresas, organizaciones y actores sociales. En esas redes, el poder se distribuye de forma desigual y depende tanto del control de recursos estratégicos como de la posición que ocupan los Estados dentro de la interdependencia \parencite{keohane_nye_power_2011}.
+
+Por su parte, el enfoque de Cardoso y Faletto muestra que estas relaciones no son neutrales, sino que están atravesadas por estructuras históricas de dependencia. El desarrollo en América Latina no puede entenderse como un proceso autónomo, sino como resultado de una inserción desigual en el sistema internacional, donde las decisiones económicas y políticas están condicionadas por relaciones externas de poder y por alianzas internas entre grupos sociales \parencite{cardoso_faletto_dependencia_1977}. Desde esta perspectiva, la soberanía digital está condicionada tanto por la posición del Estado en el sistema internacional como por su capacidad interna de articular intereses, regular actores y construir autonomía relativa frente a dichas interdependencias.
+
+Metodológicamente, el análisis cubre el periodo agosto de 2022 a 24 de febrero de 2026 y adopta el criterio de logro verificable. Se incorporan iniciativas respaldadas por actos normativos, documentos oficiales o reportes institucionales con métricas. Cuando un elemento relevante carece de presupuesto, fecha o estado verificable, se trata como información no especificada. Las fuentes primarias priorizadas provienen de MinTIC, DNP, DIAN, CRC, Función Pública, DANE, Agencia Nacional Digital y Minciencias.
+
+\section{Política Digital y Equidad}
+
+Uno de los cambios más significativos del periodo 2022--2026 es la redefinición del propósito de la política digital. Mientras etapas anteriores la concibieron principalmente como instrumento de eficiencia administrativa y competitividad económica, en este periodo se posiciona como herramienta de transformación social. La pandemia de COVID-19 evidenció desigualdades profundas en conectividad, educación digital y acceso a servicios tecnológicos, especialmente entre poblaciones históricamente marginadas \parencite{cepal_universalizar_acceso_2020}.
+
+Este enfoque se alinea con el principio de ``no dejar a nadie atrás'', promovido por Naciones Unidas en el marco de la Agenda 2030. Dicho principio identifica factores como discriminación, lugar de residencia, nivel socioeconómico, calidad de la gobernanza y vulnerabilidad frente a crisis, y propone diseñar políticas públicas inclusivas, progresivas y de largo plazo \parencite{unsceb_lnob_2017}.
+
+La subasta 5G de 2023 ilustra esta reorientación. Además de asignar espectro y recaudar 1,37 billones de pesos, incorporó obligaciones de hacer por 389.711 millones de pesos, orientadas a conectar instituciones educativas rurales y vías estratégicas \parencite{mintic_5g_realidad_2023}. En particular, las obligaciones vinculadas a Escuelas Potencia 5G contemplan hasta 1.191 instituciones educativas en 233 municipios de 21 departamentos durante 20 años \parencite{mintic_escuelas_potencia_5g_2024}. La expansión tecnológica se conecta así con objetivos de equidad territorial y social.
+
+De manera complementaria, el modelo de Internet Comunitario, formalizado mediante el Decreto 1079 de 2023, reconoce la posibilidad de que comunidades organizadas gestionen infraestructura digital bajo esquemas sin ánimo de lucro y con límites operativos definidos \parencite{funcionpublica_decreto_1079_2023}. La Resolución CRC 7712 de 2025 profundiza este enfoque mediante medidas diferenciales para la provisión de Internet Comunitario Fijo \parencite{crc_resolucion_7712_2025}. En conjunto, estas medidas desplazan parte del poder tecnológico hacia formas locales y participativas de gobernanza.
+
+Desde la perspectiva de dependencia y desarrollo de Cardoso y Faletto, estos avances pueden interpretarse como esfuerzos del Estado colombiano por ampliar sus márgenes de autonomía dentro de una estructura internacional desigual, en la que el acceso a tecnologías, infraestructura y conocimiento continúa condicionado por dinámicas globales. Aunque persisten limitaciones estructurales, las políticas analizadas muestran un intento de reconfigurar internamente las relaciones de poder mediante la inclusión y la expansión del acceso a poblaciones históricamente segregadas de los recursos tecnológicos.
+
+En este contexto, la soberanía digital promovida por Colombia durante el periodo 2022--2026 no se limita a la capacidad del Estado para regular el espacio digital. También implica garantizar condiciones de acceso equitativo y participación para toda la ciudadanía, no únicamente para sectores privilegiados. La ampliación de la conectividad en zonas rurales y comunidades históricamente marginadas constituye una política social, pero también una estrategia de fortalecimiento estatal, en la medida en que extiende su capacidad de protección, regulación y presencia en el entorno digital.
+
+\section{Infraestructura, Datos e Interdependencia}
+
+La soberanía digital se construye, en primer lugar, sobre infraestructura. Sin conectividad efectiva, cualquier estrategia de transformación digital resulta limitada. La subasta 5G constituye un punto de inflexión por su dimensión tecnológica y por su orientación redistributiva, mientras el inicio oficial del despliegue en febrero de 2024 habilitó a los operadores ganadores para activar redes de quinta generación \parencite{mintic_despliegue_5g_2024}. La rendición de cuentas de MinTIC reportó para 2024 cerca de tres millones de nuevas personas conectadas, 1.353 estaciones base 5G, 909 Juntas de Internet, 78.060 computadores entregados y 2.375 antenas instaladas \parencite{mintic_rendicion_cuentas_2024}.
+
+No obstante, en la economía digital contemporánea la infraestructura de conectividad es solo una dimensión del poder. El control, almacenamiento y procesamiento de datos emergen como elementos centrales. En el frente estatal, el Gobierno ha anunciado proyectos de centros de datos asociados a una nube soberana y al desarrollo de capacidades para inteligencia artificial. Las fuentes disponibles mencionan infraestructura en el Caribe colombiano, participación de actores internacionales como G42 y soporte de conectividad atribuido a InterNexa, aunque no todos los detalles de presupuesto, capacidad y gobernanza han sido publicados de forma completa \parencite{dcd_colombia_emiratos_datacenters_2025,presidencia_data_center_santa_marta_2025,minciencias_revolucion_cientifica_2025}.
+
+La Convocatoria 46 del Sistema General de Regalías, denominada ``Colombia Inteligente: Infraestructura para el desarrollo de la IA'', constituye otro esfuerzo importante. La convocatoria abrió en octubre de 2025, cerró en noviembre del mismo año, contempló 630.000 millones de pesos y exigió condiciones técnicas tipo centro de datos Tier III, eficiencia energética, escalabilidad, ciberseguridad y continuidad operativa \parencite{minciencias_colombia_inteligente_2025}. El proceso también generó debate público sobre gobernanza y transparencia, lo que muestra que la soberanía digital requiere capacidades técnicas y reglas claras de contratación \parencite{lorduy_colombia_inteligente_2026}.
+
+En paralelo, la expansión privada es significativa. ODATA anunció los campus BG02 y BG03 en Cundinamarca, con capacidad combinada de 144 MW e inversión estimada de 1.300 millones de dólares \parencite{dcd_odata_data_centers_2024,lorduy_odata_hub_tecnologia_2024}. También se identifican proyectos como Data Horizon Americas en la Zona Franca de Occidente, infraestructura de HostDime en Tocancipá, expansión de IFX Networks en Bogotá y soluciones de soberanía de datos impulsadas por Ilkari y Huawei \parencite{say_global_2026,hostdime_colombia_data_center_2026,smith_internexa_hostdime_2025,itsitio_ifx_data_center_2023,ilkari_huawei_data_center_2024}.
+
+En términos de política pública, estas dinámicas se articulan con la Estrategia Nacional Digital 2023--2026, que incluye conectividad, datos, seguridad, talento digital, inteligencia artificial, transformación pública y economía digital \parencite{mintic_estrategia_nacional_digital_2023}. A la vez, el CONPES 4144 define una hoja de ruta de inteligencia artificial con más de 100 acciones hacia 2030 e inversión estimada de 479.000 millones de pesos \parencite{vanegas_conpes_4144_2025}. El resultado no es aislamiento tecnológico, sino una inserción estratégica donde el Estado intenta mejorar su capacidad de decisión dentro de redes globales.
+
+Desde el enfoque de interdependencia compleja, este conjunto de iniciativas evidencia que el sistema digital colombiano no se construye en aislamiento, sino dentro de redes densas de actores públicos y privados, nacionales e internacionales. La participación de empresas como ODATA, Huawei o G42, junto con la acción estatal, muestra que la infraestructura digital y los datos dependen de múltiples niveles de interacción, donde el poder no está concentrado exclusivamente en el Estado, sino distribuido según el acceso a recursos tecnológicos, capacidades de inversión y control de información.
+
+Sin embargo, desde la perspectiva de dependencia y desarrollo, esta inserción en redes globales también revela límites estructurales. Si bien Colombia avanza en infraestructura y capacidades en inteligencia artificial y almacenamiento de datos, buena parte de estos procesos continúa articulada a capital, tecnología y conocimiento externo. Por ello, la soberanía digital colombiana no expresa autonomía plena, sino una autonomía relativa todavía en construcción. Iniciativas como la nube soberana, los centros de datos y las políticas de inteligencia artificial apuntan a fortalecer capacidades técnicas, pero también a aumentar el control sobre recursos estratégicos como los datos, que en la economía digital contemporánea constituyen una fuente central de poder.
+
+\section{Gobernanza, Talento y Servicios Digitales}
+
+La soberanía digital no se limita a infraestructura: también implica capacidad para establecer reglas. La Guía Ética para la implementación, desarrollo y uso de sistemas de inteligencia artificial en entidades públicas y la actualización del Modelo de Seguridad y Privacidad de la Información refuerzan la dimensión normativa de esta transformación \parencite{dnp_guia_etica_ia_2025,mintic_guia_etica_ia_2026,mintic_mspi_resolucion_02277_2025}. La Estrategia Nacional de Seguridad Digital 2025--2027, presentada por MinTIC y ColCERT, responde a un contexto de amenazas digitales crecientes y prioriza resiliencia institucional \parencite{mintic_seguridad_digital_2025}.
+
+La sostenibilidad de la estrategia depende además del capital humano. Talento Tech fue lanzado con una meta de formar 180.000 personas mediante bootcamps de 120 a 159 horas \parencite{mintic_talento_tech_lanzamiento_2023}. La primera adjudicación regional permitió iniciar ejecución para 18.374 personas y reportó más de 74.000 inscritos \parencite{mintic_talento_tech_regiones_2023}.
+
+Así mismo, el Programa Orquídeas ha financiado proyectos de investigación, fortalecido vocaciones científicas y promovido la participación de mujeres en áreas estratégicas como inteligencia artificial y bioeconomía, articulando equidad y desarrollo territorial. Entre 2023 y 2025 vinculó 745 mujeres, movilizó una inversión aproximada de 84.513 millones de pesos e impactó 30 departamentos y 130 municipios \parencite{minciencias_orquideas_2025}. En esta misma línea, el Museo Virtual del Centro Nacional de Memoria Histórica constituye una plataforma digital inmersiva que permite recorrer cerca de 300 lugares de memoria construidos por víctimas del conflicto armado. La plataforma integra testimonios y archivos mediante tecnologías como IPFS, blockchain e inteligencia artificial, y fue seleccionada dentro del Top 10 mundial en la categoría de Innovación Digital de una convocatoria global de la Organización de las Naciones Unidas para el Desarrollo Industrial en 2025 \parencite{unido_innovacion_digital_2025}.
+
+Este componente es clave porque la soberanía digital no solo implica acceso a infraestructura, sino capacidad social para usarla, producir conocimiento y participar en la economía digital.
+
+En servicios digitales, la Agencia Nacional Digital reportó avances en Carpeta Ciudadana y REDAM, con millones de certificados expedidos y mejoras de operación \parencite{and_informe_gestion_2024}. La DIAN, por su parte, reportó uso masivo de información exógena, validación de identidad, servicios sugeridos y datos del Sistema de Facturación Electrónica \parencite{dian_informe_gestion_2025,dian_cifras_sfe_2026}. Estas herramientas fortalecen la interacción entre Estado y ciudadanía, y también amplían la capacidad estatal de gestión de información y recaudo.
+
+Desde el enfoque de interdependencia compleja, estos avances muestran que la soberanía digital no depende únicamente del control de infraestructura, sino de la capacidad del Estado para establecer reglas, coordinar actores y gestionar riesgos en entornos altamente interconectados. La construcción de marcos éticos para la inteligencia artificial, estrategias de seguridad digital y modelos de protección de la información refleja que el poder también se ejerce a través de normas y estándares que organizan el funcionamiento del ecosistema digital.
+
+Al mismo tiempo, desde la perspectiva de dependencia y desarrollo, el fortalecimiento del talento digital y de las capacidades institucionales puede interpretarse como una estrategia para reducir brechas estructurales. La formación de capital humano, a través de programas como Talento Tech o iniciativas de inclusión como Orquídeas, amplía las oportunidades de participación en la economía digital y contribuye a disminuir la dependencia de conocimiento y capacidades externas, uno de los rasgos históricos de las economías latinoamericanas.
+
+En este sentido, la soberanía digital articula tres dimensiones: regulación, capacidades humanas y provisión de servicios. El Estado establece marcos normativos para ordenar el uso de tecnologías emergentes, invierte en formación de talento para garantizar apropiación social y fortalece servicios digitales para mejorar la relación entre ciudadanía y Estado. Esta combinación incrementa la eficiencia administrativa, amplía la presencia estatal en el entorno digital y consolida los datos como recurso estratégico para la gestión pública.
+
+\input{minCiencias}
+
+\section{Línea de Tiempo Integrada}
+
+\begin{itemize}
+    \item \textbf{26 de septiembre de 2022:} anuncio del campus Data Horizon Americas en la Zona Franca de Occidente, con proyección cercana a 55 MW \parencite{say_global_2026}.
+    \item \textbf{30 de junio de 2023:} Decreto 1079, que regula el Internet Comunitario Fijo \parencite{funcionpublica_decreto_1079_2023}.
+    \item \textbf{14 de septiembre de 2023:} lanzamiento de Talento Tech \parencite{mintic_talento_tech_lanzamiento_2023}.
+    \item \textbf{20 de diciembre de 2023:} subasta 5G con obligaciones de hacer orientadas a conectividad rural \parencite{mintic_5g_realidad_2023}.
+    \item \textbf{23 de febrero de 2024:} resoluciones que habilitan el despliegue oficial de redes 5G \parencite{mintic_despliegue_5g_2024}.
+    \item \textbf{7 de octubre de 2024:} MinTIC informa avances en construcción de data center para inteligencia artificial \parencite{mintic_data_center_ia_2024}.
+    \item \textbf{23 de octubre de 2024:} ODATA anuncia los campus BG02 y BG03 en Cundinamarca \parencite{dcd_odata_data_centers_2024}.
+    \item \textbf{9 de diciembre de 2024:} rendición de cuentas de MinTIC con avances en conectividad, equipos y 5G \parencite{mintic_rendicion_cuentas_2024}.
+    \item \textbf{20 de diciembre de 2024:} lanzamiento del Centro de Monitoreo e Inspección de Servicios de Comunicaciones \parencite{mintic_cmic_telecomunicaciones_2024}.
+    \item \textbf{Febrero de 2025:} reporte y comunicaciones sobre centros de datos en el Caribe colombiano y cooperación con G42 \parencite{dcd_colombia_emiratos_datacenters_2025,minciencias_revolucion_cientifica_2025}.
+    \item \textbf{14 de febrero de 2025:} aprobación del CONPES 4144 de inteligencia artificial \parencite{vanegas_conpes_4144_2025}.
+    \item \textbf{28 de marzo de 2025:} Resolución CRC 7712 sobre regulación diferencial para Internet Comunitario Fijo \parencite{crc_resolucion_7712_2025}.
+    \item \textbf{3 de junio de 2025:} Resolución 02277 actualiza el MSPI y lo alinea con ISO/IEC 27001:2022 \parencite{mintic_mspi_resolucion_02277_2025}.
+    \item \textbf{24 de junio de 2025:} presentación de la Estrategia Nacional de Seguridad Digital 2025--2027 \parencite{mintic_seguridad_digital_2025}.
+    \item \textbf{30 de septiembre de 2025:} HostDime reporta la integración de un Mega PoP de InterNexa en su data center Nebula \parencite{smith_internexa_hostdime_2025}.
+    \item \textbf{14 de octubre de 2025:} apertura de la Convocatoria 46 del SGR para infraestructura de IA \parencite{minciencias_colombia_inteligente_2025}.
+\end{itemize}
+
+La integración de estos hitos muestra una secuencia acumulativa en la que regulación, infraestructura, talento y gobernanza avanzan de forma paralela. En términos de Keohane y Nye, Colombia no se aísla, sino que fortalece su capacidad de decisión dentro de redes globales mediante inversión, regulación y cooperación \parencite{keohane_nye_power_2011}.
+
+Desde el enfoque de interdependencia compleja, la línea de tiempo refleja una estrategia de inserción activa en redes globales, más que un intento de aislamiento tecnológico. La participación de actores internacionales en proyectos de infraestructura, junto con el desarrollo de marcos regulatorios y capacidades internas, indica que Colombia busca mejorar su posición relativa dentro de estas redes, aumentando su capacidad de negociación, regulación y toma de decisiones.
+
+Desde la perspectiva de dependencia y desarrollo, la secuencia también puede interpretarse como un esfuerzo por reducir vulnerabilidades estructurales. La inversión en talento digital, la regulación del internet comunitario y el impulso a infraestructura de datos muestran intentos por fortalecer capacidades internas históricamente limitadas en la región. No obstante, el hecho de que varios avances se articulen con capital y tecnología externa evidencia que la autonomía alcanzada es relativa y se construye dentro de condiciones de dependencia persistentes.
+
+\section{Riesgos y Consideraciones}
+
+A pesar de los avances, la consolidación de la estrategia digital ocurre en un contexto de desafíos estructurales. En el plano económico, proyectos de gran escala liderados por actores como ODATA pueden fortalecer a Colombia como hub digital regional, pero la evidencia pública sobre empleo, encadenamientos productivos, consumo energético, agua y huella ambiental todavía es heterogénea. La discusión regional sobre centros de datos muestra que las promesas de inversión no siempre se acompañan de datos comparables sobre impactos sociales y ambientales \parencite{aosfatos_data_centers_latam_2025}.
+
+El componente energético es estratégico. Proyectos como BioNube, con requerimientos estimados de decenas de MW, y los desarrollos privados con conexión directa a redes de transmisión evidencian que la expansión de infraestructura digital depende de energía confiable, sostenible y competitiva. Los cuellos de botella no se limitan a suelo o conectividad: incluyen capacidad energética, gestión hídrica y eficiencia de refrigeración.
+
+En soberanía y gobernanza de datos, la nube soberana y los estándares técnicos de infraestructura apuntan a fortalecer control nacional, pero su implementación plantea retos: dependencia de proveedores internacionales, transferencia efectiva de conocimiento, reglas de custodia, acceso, auditoría y mecanismos de supervisión. La confianza pública depende de marcos de gobernanza claros, especialmente cuando participan actores extranjeros o esquemas público-privados.
+
+En conectividad, los resultados documentados reflejan avances en cobertura, estaciones base 5G, redes comunitarias y entrega de dispositivos. Sin embargo, persisten brechas de acceso que limitan la captura plena de beneficios. Además, situaciones administrativas asociadas a operadores específicos de la subasta 5G muestran la necesidad de mecanismos ágiles para gestionar contingencias y asegurar cumplimiento \parencite{mintic_telecall_espectro_5g_2025,lorduy_telecall_conciliacion_2026}.
+
+En gobierno digital y servicios, el desafío consiste en complementar indicadores de producto con mediciones de impacto. La propia planeación sectorial reconoce la importancia de medir resultados más allá de entregables, incluyendo adopción efectiva, calidad, satisfacción, empleabilidad y valor público \parencite{mintic_indicadores_impacto_2026}. En inteligencia artificial, el reto es pasar de principios y guías a reportes verificables de riesgo, datos utilizados, explicabilidad, sesgos, mecanismos de queja y presupuestos ejecutados.
+
+\section{Recomendaciones}
+
+Primero, se recomienda crear un tablero público unificado de metas digitales del cuatrienio, alineado con la Estrategia Nacional Digital 2023--2026. Cada iniciativa debería incluir línea base, metas anuales, avances verificables, responsables, presupuesto y fuente documental.
+
+Segundo, conviene normalizar indicadores de impacto. En conectividad y formación, no basta medir cobertura o cupos: se requiere evaluar adopción efectiva, calidad del servicio, resultados educativos, empleabilidad, asequibilidad y satisfacción de usuarios.
+
+Tercero, para 5G y obligaciones de hacer, se debería publicar información desagregada por institución educativa, municipio y operador: estado de implementación, cronograma, contingencias y evidencia de operación. En conectividad comunitaria, el Decreto 1079 y la Resolución 7712 deberían complementarse con evaluaciones periódicas de sostenibilidad, costos por hogar, calidad, gobernanza local y barreras regulatorias \parencite{funcionpublica_decreto_1079_2023,crc_resolucion_7712_2025}.
+
+Cuarto, en inteligencia artificial pública, toda implementación debería reportar cumplimiento de la Guía Ética, incluyendo evaluación de riesgos, características de los datos, explicabilidad, desempeño, sesgos, mecanismos de rendición de cuentas y presupuesto ejecutado \parencite{dnp_guia_etica_ia_2025,mintic_guia_etica_ia_2026}.
+
+Quinto, dada la relevancia de la infraestructura de datos, se requieren fichas técnicas estandarizadas para proyectos de centros de datos con participación estatal o incentivos públicos. Estas fichas deberían incluir capacidad, fases de desarrollo, certificaciones, eficiencia energética, suministro eléctrico, uso de agua, empleo, inversión ejecutada y reglas de gobernanza de datos.
+
+\section{Conclusiones}
+
+Desde la perspectiva de las relaciones internacionales, la estrategia colombiana puede entenderse como un intento de reposicionamiento dentro del sistema global. En lugar de buscar autonomía absoluta, el país avanza hacia una forma de interdependencia regulada: fortalece su capacidad de decisión sin romper con redes globales de capital, datos y tecnología.
+
+El caso colombiano combina inversión pública, regulación, cooperación internacional y atracción de capital privado global. La coexistencia de iniciativas de nube soberana con inversión extranjera en data centers, junto con la adopción de estándares internacionales, muestra una estrategia de inserción activa. En este marco, la soberanía no implica aislamiento, sino capacidad de influir, regular, negociar y reducir vulnerabilidades dentro de redes densamente interconectadas \parencite{keohane_nye_power_2011}.
+
+El modelo adoptado por Colombia combina inversión pública, fortalecimiento regulatorio, cooperación internacional y atracción de capital privado global. La coexistencia de iniciativas como la nube soberana con la expansión de infraestructura impulsada por actores internacionales, así como la adopción de estándares globales, evidencia una estrategia pragmática que busca ampliar márgenes de autonomía sin romper con las dinámicas del sistema internacional. Desde la perspectiva de Cardoso y Faletto, este proceso puede interpretarse como la construcción de una autonomía relativa, en la que el Estado intenta reconfigurar su posición dentro de estructuras de dependencia históricas \parencite{cardoso_faletto_dependencia_1977}.
+
+El periodo 2022--2026 marca un punto de inflexión en la política digital de Colombia. La transformación no se limita a la adopción tecnológica, sino a la redefinición del rol del Estado, que pasa de ser un actor principalmente regulador a uno que también promueve capacidades, coordina actores y amplía su presencia en el entorno digital. Al articular infraestructura, datos, gobernanza, talento y desarrollo social, el país comienza a consolidar una soberanía digital pragmática, orientada tanto al fortalecimiento estatal como a la reducción de brechas sociales y territoriales.
+
+En este contexto, la soberanía digital adquiere una dimensión social: no solo se trata de controlar o regular tecnologías, sino de garantizar acceso, formar capacidades y promover la participación de sectores históricamente excluidos. De este modo, la expansión de la conectividad, el desarrollo de talento digital y la provisión de servicios públicos digitales no solo mejoran la eficiencia del Estado, sino que también fortalecen el capital humano y amplían las oportunidades de inclusión en la economía digital colombiana.
+
+
+\input{defensa}
+
+\section{Bibliografía}
+\printbibliography[heading=none]
+
+
+\clearpage
+\onecolumn
+
+\appendix
+\clearpage
+\begin{landscape}
+  % \section{Anexo: Inventario de Logros Verificables}
+  % \input{verificables}
+  % \section{Tabla Ministerio de las ciencias}
+  % \input{mincienciastable}
+  % \section{Tabla MinTic}
+  % \input{minTictabla}
+  \section{Anexo: Tabla Consolidada de Proyectos Digitales}
+  \input{consolidadoAnexo}
+\end{landscape}
+\clearpage
+\end{document}

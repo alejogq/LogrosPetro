@@ -1,0 +1,171 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Rho-class article
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[9pt,a4paper,twoside]{rho-class/rho}
+\usepackage[spanish,es-nodecimaldot,es-noindentfirst,es-noshorthands]{babel}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{hyperref}
+
+%----------------------------------------------------------
+% Title
+%----------------------------------------------------------
+
+\doctype{Informe de análisis}
+\title{Logros digitales del Gobierno de Colombia durante el mandato del presidente Gustavo Petro}
+
+%----------------------------------------------------------
+% Authors, Affiliations and dates
+%----------------------------------------------------------
+
+\author[{\textasteriskcentered},a,1]{Equipo de análisis}
+\affil[a]{Documento de trabajo}
+\dates{Corte de información: 24 de febrero de 2026}
+
+%----------------------------------------------------------
+% Document information
+%----------------------------------------------------------
+
+\corres{\textsuperscript{\textasteriskcentered}Documento elaborado a partir de Logros\_Digitales\_Petro.odt y de la bibliografía organizada en biblio.bib.}
+\docinfo{Este informe sintetiza evidencia normativa, institucional y periodística sobre infraestructura digital, inclusión, gobierno digital, ciberseguridad, datos e inteligencia artificial durante el periodo agosto de 2022--febrero de 2026.}
+
+\journalname{Logros digitales}
+\journal{Gobierno de Colombia 2022--2026}
+\theday{\today}
+\vol{1}
+\no{1}
+
+%----------------------------------------------------------
+% Abstract and Keywords
+%----------------------------------------------------------
+
+\begin{abstract}
+Entre agosto de 2022 y el 24 de febrero de 2026, los logros verificables del Gobierno de Colombia en materia digital se concentran en cinco frentes: infraestructura y conectividad; inclusión y formación; gobierno digital y servicios públicos; ciberseguridad y confianza; y datos, inteligencia artificial y regulación. La evidencia disponible muestra hitos como la subasta 5G, el inicio del despliegue de redes, las obligaciones de conectividad escolar, Talento Tech, Centros PotencIA, la operación de servicios ciudadanos digitales, la actualización del Modelo de Seguridad y Privacidad de la Información, la Estrategia Nacional de Seguridad Digital 2025--2027, la Estrategia Nacional Digital 2023--2026 y el CONPES 4144 de inteligencia artificial. A la vez, persisten límites de medición, brechas de conectividad, riesgos de implementación y controversias administrativas que condicionan la evaluación del impacto.
+\end{abstract}
+
+\keywords{conectividad, gobierno digital, 5G, inteligencia artificial, ciberseguridad, Colombia}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firststyle}
+
+\section{Resumen Ejecutivo}
+
+\rhostart{E}l balance digital del Gobierno de Colombia durante el mandato del presidente Gustavo Petro combina avances normativos, hitos de infraestructura y programas de inclusión. En conectividad, la subasta 5G del 20 de diciembre de 2023 recaudó 1,37 billones de pesos, asignó cuatro bloques de 80 MHz y definió obligaciones de hacer por 389.711 millones de pesos, incluidas conexiones de fibra para instituciones educativas durante 20 años \cite{mintic_5g_realidad_2023}. El despliegue fue habilitado oficialmente el 23 de febrero de 2024 mediante resoluciones a los operadores ganadores \cite{mintic_despliegue_5g_2024}.
+
+En inclusión digital, el Gobierno lanzó Talento Tech, con meta anunciada de formar a 180.000 personas en habilidades tecnológicas mediante bootcamps de 120 a 159 horas \cite{mintic_talento_tech_lanzamiento_2023}. La primera adjudicación regional permitió iniciar ejecución para 18.374 personas en Bogotá, Boyacá, Cundinamarca, Cauca y Nariño \cite{mintic_talento_tech_regiones_2023}. También se reportó la puesta en marcha de Centros PotencIA y diseños de centros de inteligencia artificial en Usme y Zipaquirá \cite{mintic_rendicion_cuentas_2024,mintic_centros_potencia_2025}.
+
+En gobierno digital, la Agencia Nacional Digital reportó operación y escalamiento de servicios asociados a Carpeta Ciudadana y REDAM, con 5.339.021 certificados expedidos, 1.738 deudores registrados y actividades de capacitación a funcionarios \cite{and_informe_gestion_2024}. En fiscalización digital, la DIAN reportó el uso masivo de información exógena, validación de identidad, reportes de facturas electrónicas y servicios sugeridos para mejorar cumplimiento tributario \cite{dian_informe_gestion_2025,dian_cifras_sfe_2026}.
+
+En ciberseguridad y confianza, el Gobierno presentó la Estrategia Nacional de Seguridad Digital 2025--2027 y actualizó el Modelo de Seguridad y Privacidad de la Información mediante la Resolución 02277 de 2025, alineándolo con ISO/IEC 27001:2022 \cite{mintic_seguridad_digital_2025,mintic_mspi_resolucion_02277_2025}. En datos e inteligencia artificial, la Estrategia Nacional Digital 2023--2026 opera como marco general, mientras que el CONPES 4144 fijó una hoja de ruta de IA con más de 100 acciones y una inversión de 479.000 millones de pesos \cite{mintic_estrategia_nacional_digital_2023,vanegas_conpes_4144_2025}.
+
+\section{Alcance y Método}
+
+Este reporte cubre el periodo agosto de 2022 a 24 de febrero de 2026. El tema digital se entiende en sentido amplio: redes fijas y móviles, gobierno digital, servicios ciudadanos, ciberseguridad, privacidad, gobernanza de datos, estadística oficial, inclusión y alfabetización digital, economía digital, innovación, inteligencia artificial, identidad digital y fiscalización tributaria basada en datos.
+
+El criterio de logro verificable exige evidencia en al menos una de tres categorías: actos normativos, documentos oficiales de planeación o publicaciones institucionales con métricas. Cuando una iniciativa relevante no cuenta con fecha, presupuesto o métricas suficientes en las fuentes consultadas, se marca como dato no especificado.
+
+Las fuentes primarias priorizadas son publicaciones de MinTIC, DNP, DIAN, Función Pública, CRC, DANE y la Agencia Nacional Digital. Como complemento analítico se emplean prensa y organizaciones especializadas, entre ellas Impacto TIC, El País, Portafolio y Fundación Karisma \cite{castro_5g_colombia_2023,lewin_subasta_5g_el_pais_2023,lorduy_telecall_conciliacion_2026,karisma_habemus_2023}.
+
+\section{Línea de Tiempo}
+
+\begin{itemize}
+    \item \textbf{30 de junio de 2023:} Decreto 1079, que establece condiciones para Internet comunitario fijo \cite{funcionpublica_decreto_1079_2023}.
+    \item \textbf{14 de septiembre de 2023:} lanzamiento de Talento Tech \cite{mintic_talento_tech_lanzamiento_2023}.
+    \item \textbf{20 de diciembre de 2023:} subasta 5G y definición de obligaciones de hacer \cite{mintic_5g_realidad_2023}.
+    \item \textbf{23 de febrero de 2024:} resoluciones que habilitan el inicio oficial del despliegue 5G \cite{mintic_despliegue_5g_2024}.
+    \item \textbf{9 de diciembre de 2024:} rendición de cuentas MinTIC con métricas de conectividad, 5G, equipos y Juntas de Internet \cite{mintic_rendicion_cuentas_2024}.
+    \item \textbf{20 de diciembre de 2024:} lanzamiento del Centro de Monitoreo e Inspección de Servicios de Comunicaciones \cite{mintic_cmic_telecomunicaciones_2024}.
+    \item \textbf{14 de febrero de 2025:} aprobación del CONPES 4144 de inteligencia artificial \cite{vanegas_conpes_4144_2025}.
+    \item \textbf{28 de marzo de 2025:} Resolución CRC 7712 sobre regulación diferencial para Internet Comunitario Fijo \cite{crc_resolucion_7712_2025}.
+    \item \textbf{3 de junio de 2025:} Resolución 02277, que actualiza el MSPI \cite{mintic_mspi_resolucion_02277_2025}.
+    \item \textbf{24 de junio de 2025:} presentación de la Estrategia Nacional de Seguridad Digital 2025--2027 \cite{mintic_seguridad_digital_2025}.
+    \item \textbf{31 de diciembre de 2025 y 7 de enero de 2026:} impulso y publicación de la Guía Ética de IA para entidades públicas \cite{dnp_guia_etica_ia_2025,mintic_guia_etica_ia_2026}.
+\end{itemize}
+
+\section{Inventario de Logros Verificables}
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}p{0.14\textwidth}>{\raggedright\arraybackslash}p{0.16\textwidth}>{\raggedright\arraybackslash}p{0.16\textwidth}>{\raggedright\arraybackslash}p{0.24\textwidth}}
+\caption{Iniciativas digitales verificables, agosto de 2022--febrero de 2026.}\\
+\toprule
+\textbf{Iniciativa} & \textbf{Hito} & \textbf{Entidad} & \textbf{Estado} & \textbf{Indicadores o evidencia} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Iniciativa} & \textbf{Hito} & \textbf{Entidad} & \textbf{Estado} & \textbf{Indicadores o evidencia} \\
+\midrule
+\endhead
+Subasta 5G y obligaciones de hacer & 20-dic-2023 & MinTIC & Implementada; despliegue en curso & Recaudo de 1,37 billones de pesos, cuatro bloques de 80 MHz, obligaciones por 389.711 millones de pesos, conectividad escolar y vías \cite{mintic_5g_realidad_2023}. \\
+Inicio oficial del despliegue 5G & 23-feb-2024 & MinTIC & Implementado & Resoluciones que habilitan a operadores ganadores para desplegar redes 5G \cite{mintic_despliegue_5g_2024}. \\
+Escuelas Potencia 5G & 2024 & MinTIC y operadores & En curso & Hasta 1.191 instituciones educativas, 233 municipios, 21 departamentos y alrededor de 4.000 km de fibra \cite{mintic_escuelas_potencia_5g_2024}. \\
+Controversia por adjudicatario 5G & 29-ene-2025 & MinTIC & En curso & Actuaciones administrativas por garantías y primer pago de contraprestación asociadas a Telecall \cite{mintic_telecall_espectro_5g_2025,lorduy_telecall_conciliacion_2026}. \\
+CMIC & 20-dic-2024 & MinTIC & Implementado & Herramienta de monitoreo e inspección de servicios de comunicaciones; reporte de 1.378 estaciones base 5G al tercer trimestre de 2024 \cite{mintic_cmic_telecomunicaciones_2024}. \\
+Rendición MinTIC 2024 & 09-dic-2024 & MinTIC & Reporte anual & Cerca de tres millones de nuevas personas conectadas, 1.353 estaciones base 5G, 909 Juntas de Internet, 78.060 computadores y 2.375 antenas \cite{mintic_rendicion_cuentas_2024}. \\
+Internet comunitario fijo & 30-jun-2023 & Presidencia y MinTIC & Implementado & Decreto 1079 define condiciones para prestación del servicio de Internet comunitario fijo \cite{funcionpublica_decreto_1079_2023}. \\
+Juntas de Internet & 2024--2026 & MinTIC & En estructuración y ejecución & Metodología de siete etapas y proyección de hogares beneficiados a 2030 \cite{mintic_juntas_internet_2024}. \\
+Regulación diferencial ICF & 28-mar-2025 & CRC & Implementada & Resolución 7712 crea medidas diferenciales para provisión de Internet Comunitario Fijo \cite{crc_resolucion_7712_2025}. \\
+Talento Tech & 14-sep-2023 & MinTIC & En curso & Meta de 180.000 personas formadas en bootcamps de 120 a 159 horas \cite{mintic_talento_tech_lanzamiento_2023}. \\
+Adjudicación inicial Talento Tech & 16-dic-2023 & MinTIC & En curso & Primera ejecución para 18.374 personas en cinco territorios; más de 74.000 inscritos reportados \cite{mintic_talento_tech_regiones_2023}. \\
+Talento Tech V2.0 & 2023 & MinTIC & En curso & Documento de formulación con objetivo de formar al menos 94.696 personas \cite{mintic_talento_tech_v2_2023}. \\
+Centros PotencIA & 2024--2025 & MinTIC & En curso & Meta de 60 centros; diseños de centros de IA en Usme y Zipaquirá por 132.000 millones de pesos \cite{mintic_rendicion_cuentas_2024,mintic_centros_potencia_2025}. \\
+Estrategia Nacional Digital & 2023--2026 & DNP, Presidencia y MinTIC & Marco implementado & Ejes de conectividad, datos, seguridad, talento digital, IA, transformación pública y economía digital \cite{mintic_estrategia_nacional_digital_2023}. \\
+CONPES 4144 de IA & 14-feb-2025 & DNP y CONPES & Política implementada; ejecución en curso & Más de 100 acciones hasta 2030 e inversión de 479.000 millones de pesos \cite{vanegas_conpes_4144_2025}. \\
+Guía Ética de IA pública & 31-dic-2025 / 07-ene-2026 & Presidencia, DNP, MinTIC, MinCiencias y CRC & Implementada & Orientaciones para adopción responsable de IA en entidades públicas \cite{dnp_guia_etica_ia_2025,mintic_guia_etica_ia_2026}. \\
+Estrategia Nacional de Seguridad Digital & 24-jun-2025 & MinTIC y ColCERT & Lanzada; aplicación en curso & Respuesta institucional ante presión de amenazas digitales y necesidad de resiliencia \cite{mintic_seguridad_digital_2025}. \\
+Actualización del MSPI & 03-jun-2025 & MinTIC & Implementada & Resolución 02277 adopta lineamientos alineados con ISO/IEC 27001:2022 \cite{mintic_mspi_resolucion_02277_2025}. \\
+Carpeta Ciudadana y REDAM & 2024 & Agencia Nacional Digital & Implementado y en curso & 5.339.021 certificados expedidos, 1.738 deudores registrados, mejoras y capacitaciones \cite{and_informe_gestion_2024}. \\
+Servicios digitales DIAN & 30-ene-2026 & DIAN & Implementado y en curso & Información exógena para 35.256.814 personas, reportes de facturas para 17.365.616 y servicios sugeridos \cite{dian_informe_gestion_2025}. \\
+Sistema de Facturación Electrónica & 31-ene-2026 & DIAN & Implementado & Series y cortes de habilitados en factura electrónica, RADIAN y documentos equivalentes \cite{dian_cifras_sfe_2026}. \\
+Ley 2335 de estadísticas oficiales & 03-oct-2023 & Congreso y DANE & Implementada & Marco para operaciones estadísticas, registros administrativos y datos del Sistema Estadístico Nacional \cite{funcionpublica_ley_2335_2023}. \\
+Ley 2300 de protección de intimidad & 10-jul-2023 & Congreso & Implementada & Reglas de canales, horarios y periodicidad de contacto en gestiones de cobranza y relaciones de consumo \cite{funcionpublica_ley_2300_2023}. \\
+\bottomrule
+\end{longtable}
+
+\section{Clasificación por Dimensiones}
+
+La clasificación combina dos capas: la dimensión del problema digital y la naturaleza de la intervención. La Estrategia Nacional Digital 2023--2026 permite ordenar el portafolio en conectividad, datos, seguridad y confianza, talento digital, tecnologías emergentes, transformación digital pública, economía digital y sociedad digital \cite{mintic_estrategia_nacional_digital_2023}.
+
+\begin{itemize}
+    \item \textbf{Infraestructura digital:} subasta 5G, despliegue, Escuelas Potencia 5G, CMIC, Internet comunitario fijo y Juntas de Internet.
+    \item \textbf{Inclusión y alfabetización:} Talento Tech, Centros PotencIA y conectividad escolar derivada de obligaciones de hacer.
+    \item \textbf{Gobierno digital y servicios:} Carpeta Ciudadana, REDAM y servicios digitales de la DIAN.
+    \item \textbf{Ciberseguridad y confianza:} Estrategia Nacional de Seguridad Digital 2025--2027 y actualización del MSPI.
+    \item \textbf{Datos e inteligencia artificial:} Ley 2335, Estrategia Nacional Digital, CONPES 4144 y Guía Ética de IA.
+    \item \textbf{Regulación y marco legal:} Decreto 1079, Resolución CRC 7712 y Ley 2300.
+    \item \textbf{Fiscalización y recaudo digital:} factura electrónica, información exógena, validación de identidad y declaraciones sugeridas de la DIAN.
+\end{itemize}
+
+\section{Impactos y Limitaciones}
+
+En infraestructura y conectividad, el impacto documentado por fuentes oficiales se expresa sobre todo en cobertura y entregables: para 2024, MinTIC reportó cerca de tres millones de nuevas personas conectadas, 909 Juntas de Internet en 299 municipios de 27 departamentos, alrededor de 136.000 personas beneficiadas por juntas, 1.353 estaciones base 5G, 78.060 computadores entregados y 2.375 antenas instaladas \cite{mintic_rendicion_cuentas_2024}. El salto institucional clave fue la subasta 5G, con obligaciones cuantificadas para conectividad escolar y mejoramiento de vías \cite{mintic_5g_realidad_2023}.
+
+No obstante, análisis externos subrayan brechas persistentes. Impacto TIC señaló que Colombia ingresó a la era 5G con una proporción significativa de población aún desconectada, lo cual limita la captura de beneficios sociales y productivos \cite{castro_5g_colombia_2023}. El País también resaltó que la subasta recogió menos dinero del esperado frente a metas oficiales \cite{lewin_subasta_5g_el_pais_2023}.
+
+En implementación y riesgos, el caso de Telecall muestra incertidumbre administrativa: MinTIC informó actuaciones por presuntos incumplimientos y Portafolio reportó intentos de conciliación para destrabar el futuro del operador \cite{mintic_telecall_espectro_5g_2025,lorduy_telecall_conciliacion_2026}. Este episodio no invalida el hito de la subasta, pero sí condiciona el despliegue pleno de todos los adjudicatarios.
+
+En gobierno digital, la evidencia más sólida corresponde a métricas de uso. La Agencia Nacional Digital reportó operación del sistema REDAM y millones de certificados expedidos por Carpeta Ciudadana \cite{and_informe_gestion_2024}. En contraste, MinTIC reconoce que buena parte del seguimiento sectorial se publica como indicadores de producto y que la medición de impactos depende de evaluaciones lideradas por el DNP \cite{mintic_indicadores_impacto_2026}.
+
+En IA y datos, el CONPES 4144 aporta una hoja de ruta con acciones y presupuesto, y la Guía Ética crea un instrumento de gobernanza para el sector público \cite{vanegas_conpes_4144_2025,mintic_guia_etica_ia_2026}. Aun así, la discusión pública mantiene preocupaciones sobre regulación, desigualdad, protección de derechos y capacidades institucionales para adopción responsable \cite{elpais_colombia_ia_politica_2025}.
+
+\section{Recomendaciones de Seguimiento}
+
+Primero, conviene establecer un tablero público unificado de metas digitales alineado con la Estrategia Nacional Digital 2023--2026. Cada iniciativa debería tener línea base, meta anual, avance, responsable y fuente verificable.
+
+Segundo, se requiere normalizar indicadores de impacto, no solo de producto, para conectividad, habilidades y servicios digitales. Esto implica medir adopción efectiva, calidad, asequibilidad, resultados educativos, empleabilidad y satisfacción de usuarios.
+
+Tercero, para 5G y obligaciones de hacer, sería útil publicar avances por institución educativa, municipio y operador: estado de planeación, instalación, operación, fecha estimada y contingencias administrativas. La existencia de notificaciones y cortes parciales muestra que hay información, pero no necesariamente un tablero permanente y reutilizable \cite{mintic_escuelas_potencia_5g_2024}.
+
+Cuarto, para conectividad comunitaria, se debería complementar el Decreto 1079 y la Resolución 7712 con una evaluación anual de sostenibilidad: comunidades operando, costos por hogar, calidad del servicio, barreras regulatorias y gobernanza local \cite{funcionpublica_decreto_1079_2023,crc_resolucion_7712_2025}.
+
+Quinto, para inteligencia artificial pública, toda adopción debería reportar cumplimiento de la Guía Ética: evaluación de riesgos, datos usados, explicabilidad, desempeño, sesgos, mecanismos de queja y presupuesto ejecutado \cite{dnp_guia_etica_ia_2025,mintic_guia_etica_ia_2026}.
+
+\section{Fuentes Primarias Clave}
+
+Las referencias de mayor valor para trazabilidad son la subasta 5G y sus obligaciones \cite{mintic_5g_realidad_2023}, las resoluciones de inicio del despliegue \cite{mintic_despliegue_5g_2024}, la rendición de cuentas MinTIC 2024 \cite{mintic_rendicion_cuentas_2024}, el Decreto 1079 \cite{funcionpublica_decreto_1079_2023}, la Resolución CRC 7712 \cite{crc_resolucion_7712_2025}, la Estrategia Nacional Digital \cite{mintic_estrategia_nacional_digital_2023}, el CONPES 4144 \cite{vanegas_conpes_4144_2025}, la Guía Ética de IA \cite{mintic_guia_etica_ia_2026}, la Estrategia Nacional de Seguridad Digital \cite{mintic_seguridad_digital_2025}, el informe de la Agencia Nacional Digital \cite{and_informe_gestion_2024}, los informes DIAN \cite{dian_informe_gestion_2025,dian_cifras_sfe_2026} y las leyes 2335 y 2300 \cite{funcionpublica_ley_2335_2023,funcionpublica_ley_2300_2023}.
+
+\section{Bibliografía}
+\printbibliography[heading=none]
+
+\end{document}

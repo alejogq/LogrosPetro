@@ -1,0 +1,42 @@
+# Local assistant/editor state
+.codex
+.codex/
+
+# Source document folders used as local evidence
+Documents/
+Defensa/
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.dvi
+*.ps
+*.bbl-SAVE-ERROR
+
+# Generated document outputs
+logros.pdf
+logros.rtf
+main.pdf
+defensa_test.pdf
+
+# Temporary compile/test files
+defensa_test.*
+
+# Downloaded/unpacked template copies
+Rho_Class___Research_Article_Template/
+Rho_Class___Research_Article_Template*.zip
